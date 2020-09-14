@@ -22,5 +22,4 @@ pipeline {
              sh "pack build hello --builder paketobuildpacks/builder:tiny"
            }
      }  
-
-}
+ }
