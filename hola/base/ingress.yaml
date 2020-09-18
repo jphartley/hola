@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-hello
+  annotations:
+    # use the shared ingress-nginx
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: hello.35.184.147.222.nip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hello-service
+          servicePort: 80
