@@ -6,6 +6,9 @@ spec:
       volumeMounts:
         - name: docker
           mountPath: /var/run/docker.sock
+        - name: dockerhub-creds
+          mountPath: /root/.docker
+          readOnly: true
       image: buildpacksio/pack:0.12.0
       command: ["tail", "-f", "/dev/null"]
       imagePullPolicy: Always
@@ -19,3 +22,6 @@ spec:
     - name: docker
       hostPath:
         path: /var/run/docker.sock
+    - name: dockerhub-creds
+      secret:
+        secretName: dockerhub-creds
