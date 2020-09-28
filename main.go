@@ -12,5 +12,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hej, %s! (built from %s) ", r.URL.Path[1:], os.Getenv("BRANCH"))
+    fmt.Fprintf(w, "Hallo, %s! (built from %s) ", r.URL.Path[1:], os.Getenv("BRANCH"))
 }
